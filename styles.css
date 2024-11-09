@@ -1,0 +1,426 @@
+/* Basic Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    padding: 1rem;
+    background-color: #45b3d5;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #45b3d5;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a9ec2;
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+#allSongsSection, #songCardSection, #playlistSection {
+    width: 30%;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#songsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#songsList li {
+    cursor: pointer;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#songsList li:hover {
+    background-color: #f1f1f1;
+}
+
+#currentSongCard {
+    /* display: flex; */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#songImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+#songInfo h3 {
+    font-size: 1.2rem;
+}
+
+#songInfo{
+    margin: 1rem;
+}
+
+#controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#controls button {
+    width: 20%;
+    padding: 0.5rem;
+}
+
+#playlistList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#playlistList li {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#playlistList li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dark Mode */
+body[data-theme="dark"] {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+body[data-theme="dark"] header {
+    background-color: #1f1f1f;
+}
+
+body[data-theme="dark"] button {
+    background-color: #4CAF50;
+}
+
+body[data-theme="dark"] #songCardSection {
+    background-color: #333;
+    color: white;
+}
+
+body[data-theme="dark"] #allSongsSection,
+body[data-theme="dark"] #playlistSection {
+    background-color: #444;
+    color: white;
+}
+
+/* Toggle Theme */
+.toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* Toggle Theme Styling */
+.toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-container input {
+    opacity: 0;  /* Hide the default checkbox */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* When the checkbox is checked */
+input:checked + .slider {
+    background-color: #4CAF50;  /* Green background when checked */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);  /* Move the slider knob to the right */
+}
+
+/* For light and dark modes */
+body[data-theme="dark"] {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+body[data-theme="dark"] .toggle-container input:checked + .slider {
+    background-color: #2196F3;  /* Blue when toggled on in dark mode */
+}
+
+
+#songCardSection h2{
+    text-align: center;
+}
+
+
+#playlistSongsList li{
+list-style: none;
+margin: 1rem 0;
+padding: 0.5rem;
+border: 1px solid #ddd;
+border-radius: 5px;
+
+}
+
+.all-playlist{
+    margin-bottom: 1rem;
+}
+
+#genreFilter{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-genre{
+margin-bottom: 1rem;
+}
+
+#playlistNameInput{
+    padding: .25rem;
+    border-radius: .2rem;
+}
+
+#audioPlayer{
+    display: flex;
+    margin: 0 auto;
+}
+
+
+
+/* mobile view  */
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+    #container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #allSongsSection,
+    #songCardSection,
+    #playlistSection {
+        width: 45%;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #allSongsSection,
+    #songCardSection,
+    #playlistSection {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    button {
+        width: 100%; /* Full width for better usability */
+    }
+
+    #controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #controls button {
+        margin-bottom: 0.5rem;
+        width: 90%;
+    }
+
+    #songImage {
+        height: auto;
+    }
+
+    #audioPlayer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .toggle-container {
+        margin-top: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #container {
+        padding: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    #songName {
+        font-size: 1rem;
+    }
+
+    #songArtist {
+        font-size: 0.9rem;
+    }
+
+    #playlistNameInput {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #container {
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+
+    #songCardSection {
+        padding: 0.5rem;
+    }
+
+    #playlistSongsList li,
+    #songsList li {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    #playlistList li {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .toggle-container {
+        width: 50px;
+        height: 28px;
+    }
+
+    .slider:before {
+        height: 22px;
+        width: 22px;
+    }
+}

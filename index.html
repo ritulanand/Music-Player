@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="light">
+    <header>
+      <h1>Music Player</h1>
+      <label class="toggle-container">
+        <input type="checkbox" id="toggleThemeBtn" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div id="container">
+      <!-- All Songs Section -->
+      <div id="allSongsSection">
+        <label class="filter-genre">Filter By Genre: </label>
+        <select id="genreFilter">
+            <option value="">All Genres</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Classical">Classical</option>
+          </select>
+        <h2>All Songs</h2>
+        <ul id="songsList"></ul>
+      </div>
+
+      <!-- Song Card Section -->
+      <div id="songCardSection">
+        <h2>Now Playing</h2>
+        <div id="currentSongCard">
+          <img id="songImage" src="" alt="Song Image" />
+          <!-- Audio Player -->
+
+          <div id="songInfo">
+            <h3 id="songName"></h3>
+            <p id="songArtist"></p>
+          </div>
+          <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div id="controls">
+          <button id="prevBtn">Prev</button>
+          <button id="playPauseBtn">Play</button>
+          <button id="nextBtn">Next</button>
+          <button id="addToPlaylistBtn">Add to Playlist</button>
+
+        </div>
+      </div>
+
+      <div id="playlistSection">
+        <h2>Playlists</h2>
+        <input type="text" id="playlistNameInput" placeholder="Enter playlist name" />
+        <button id="createPlaylistBtn">Create Playlist</button>
+        <h3 class="all-playlist">All Playlist</h3>
+        <ul id="playlistList"></ul>
+        <div id="playlistSongsContainer">
+            <h3>Current Playlist</h3>
+            <ul id="playlistSongsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
